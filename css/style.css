@@ -1,0 +1,2523 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;500;600;700;800&display=swap');
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+a {
+    text-decoration: none;
+}
+
+li {
+    list-style: none;
+}
+
+:root {
+    --poppins: 'Poppins', sans-serif;
+
+    --light: #ffffff;
+    --purple: #6439FF;
+    --background: #e5e0f7;
+    --hover: #f9f9f9;
+    --light-purple: #CFE8FF;
+    --background: #eee;
+    --light-grey: lightgray;
+    --dark-grey: #3b3737;
+    --dark: #03091b;
+    --lilac: #9B59B6;
+    --light-purple: #3498DB;
+    --light-yellow: #FFF2C6;
+    --soft-red: #E74C3C;
+    --light-soft-red: #FFE0D3;
+    --green: #1ABC9C;
+}
+
+html {
+    overflow-x: hidden;
+}
+
+body.dark {
+    --light: #0C0C1E;
+    --background: #03040a;
+    --dark: #FBFBFB;
+    --light-grey: #03040a;
+}
+
+body {
+    background: var(--background);
+    overflow-x: hidden;
+    font-family: poppins, sans-serif;
+    opacity: 1;
+    transition: opacity 0.5s ease;
+    /* Smooth fade-in effect */
+}
+
+.fade-out {
+    opacity: 0;
+}
+
+/*===================================Add Patient Modal CSS Starts====================================*/
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 2100;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+
+}
+
+.modal-content-addpatient {
+    background-color: var(--light);
+    margin: 8% auto;
+    padding: 40px;
+    border: 1px solid #888;
+    border-radius: 10px;
+    width: 50%;
+    position: relative;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    -webkit-animation-name: animatetop;
+    -webkit-animation-duration: 0.4s;
+    animation-name: animatetop;
+    animation-duration: 0.4s;
+}
+
+@-webkit-keyframes animatetop {
+    from {
+        top: -300px;
+        opacity: 0
+    }
+
+    to {
+        top: 0;
+        opacity: 1
+    }
+}
+
+@keyframes animatetop {
+    from {
+        top: -300px;
+        opacity: 0
+    }
+
+    to {
+        top: 0;
+        opacity: 1
+    }
+}
+
+.modal-content-addpatient h2 {
+    color: var(--purple);
+    font-size: 2.3rem;
+    padding-bottom: 10px;
+    display: flex;
+    justify-content: center;
+}
+
+.modal-content-addpatient .addpatientform {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.modal-content-addpatient .form-group {
+    padding-top: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-left: 30px;
+    width: 100%;
+}
+
+.modal-content-addpatient .form-group label {
+    padding-right: 30px;
+    color: var(--dark);
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    align-self: flex-start;
+    font-size: 1rem;
+    font-weight: 700;
+    width: 10%;
+}
+
+.modal-content-addpatient .form-group .input {
+    border: 1px solid var(--dark-grey);
+    border-radius: 10px;
+    padding: 6px;
+    width: 70%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.options {
+    background-color: var(--light);
+    color: var(--dark);
+    font-weight: 600;
+}
+
+.addpatientclose {
+    margin-top: 5px;
+    float: right;
+    font-size: 32px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.addpatientclose :hover,
+.addpatientclose :focus {
+    color: var(--soft-red);
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.addpatient {
+    margin-top: 20px;
+    height: 46px;
+    padding: 15px 35px;
+    border: 2px solid transparent;
+    border-radius: 35px;
+    background: var(--purple);
+    color: var(--light);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    grid-gap: 10px;
+    font-weight: 500;
+    font-size: 1.2rem;
+    box-shadow: 0 8px 12px rgba(149, 97, 199, 0.15), 0 3px 6px rgba(149, 97, 199, 0.15);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.addpatient:hover {
+    transform: scale(0.95);
+    box-shadow: 0 8px 12px rgba(149, 97, 199, 0.15), 0 3px 6px rgba(149, 97, 199, 0.15);
+}
+
+
+/*============================================Add Patient Modal CSS Ends==================================*/
+
+
+/*==============================================View Modal CSS Starts======================================*/
+
+.modal-content-view {
+    background-color: var(--light);
+    margin: 12% auto;
+    padding: 40px;
+    border: 1px solid #888;
+    border-radius: 10px;
+    width: 50%;
+    position: relative;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    -webkit-animation-name: animatetop;
+    -webkit-animation-duration: 0.4s;
+    animation-name: animatetop;
+    animation-duration: 0.4s;
+}
+
+.modal-content-view h2 {
+    color: var(--purple);
+    font-size: 2.3rem;
+    display: flex;
+    justify-content: center;
+}
+
+.modal-content-view .patientdetailsviewmodal {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.modal-content-view p {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    font-size: 1.2rem;
+    font-weight: 500;
+    margin-left: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+.modal-content-view p .viewlabel {
+    margin-right: 10px;
+    font-size: 1.1rem;
+    font-weight: 700;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    width: 15%;
+    align-self: flex-start;
+    /* display: flex;
+    width: 400px; */
+}
+
+.modal-content-view p span {
+    font-size: 1.1rem;
+    margin-left: 20px;
+    width: 70%;
+}
+
+.viewclose {
+    margin-top: 5px;
+    float: right;
+    font-size: 2rem;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.viewclose:hover,
+.viewclose:focus {
+    color: var(--soft-red);
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/*======================View Modal CSS Ends=====================*/
+
+
+/*======================Update Modal CSS Starts=====================*/
+
+.modal-content-edit {
+    background-color: var(--light);
+    margin: 8% auto;
+    padding: 40px;
+    border: 1px solid #888;
+    border-radius: 10px;
+    width: 55%;
+    position: relative;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    -webkit-animation-name: animatetop;
+    -webkit-animation-duration: 0.4s;
+    animation-name: animatetop;
+    animation-duration: 0.4s;
+}
+
+.modal-content-edit h2 {
+    color: var(--purple);
+    font-size: 2.3rem;
+    padding-bottom: 10px;
+    display: flex;
+    justify-content: center;
+}
+
+.modal-content-edit .form-group {
+    padding-top: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.modal-content-edit .form-group label {
+    padding-right: 30px;
+    padding-left: 20px;
+    color: var(--dark);
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    align-self: flex-start;
+    font-size: 1rem;
+    font-weight: 700;
+    width: 10%;
+}
+
+.modal-content-edit .form-group .input {
+    border: 1px solid var(--dark-grey);
+    border-radius: 10px;
+    padding: 6px;
+    width: 70%;
+}
+
+
+.options {
+    background-color: var(--light);
+    color: var(--dark);
+    font-weight: 600;
+}
+
+.editclose {
+    margin-top: 5px;
+    margin-left: 20px;
+    float: right;
+    font-size: 32px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.editclose:hover,
+.editclose:focus {
+    color: var(--soft-red);
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.modal-btn {
+    height: 46px;
+    padding: 15px 35px;
+    margin-top: 10px;
+    margin-right: 20px;
+    border: 2px solid transparent;
+    border-radius: 35px;
+    background: var(--purple);
+    color: var(--light);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 500;
+    font-size: 1.2rem;
+    box-shadow: 0 8px 12px rgba(149, 97, 199, 0.15), 0 3px 6px rgba(149, 97, 199, 0.15);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.modal-btn:hover {
+    transform: scale(0.95);
+    box-shadow: 0 8px 12px rgba(149, 97, 199, 0.15), 0 3px 6px rgba(149, 97, 199, 0.15);
+}
+
+/*======================Update Modal CSS Ends=====================*/
+
+
+
+/*======================Delete Modal CSS Starts=====================*/
+
+.modal-del {
+    display: none;
+    position: fixed;
+    z-index: 2100;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal-content-del {
+    background-color: var(--light);
+    margin: 20% auto;
+    padding: 40px;
+    border: 1px solid #888;
+    border-radius: 10px;
+    width: 50%;
+    height: auto;
+    position: relative;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    -webkit-animation-name: animatetop;
+    -webkit-animation-duration: 0.4s;
+    animation-name: animatetop;
+    animation-duration: 0.4s
+}
+
+.modal-content-del p {
+    margin-top: 10px;
+    font-size: 1.2rem;
+    font-weight: 500;
+}
+
+.deletemodalbuttons {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 10px;
+    gap: 10px;
+}
+
+.modal-del-btn {
+    height: 40px;
+    padding: 10px 20px;
+    border: 2px solid transparent;
+    border-radius: 35px;
+    background: var(--purple);
+    color: var(--light);
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    grid-gap: 10px;
+    font-weight: 500;
+    font-size: 1rem;
+    box-shadow: 0 8px 12px rgba(149, 97, 199, 0.15), 0 3px 6px rgba(149, 97, 199, 0.15);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.modal-del-btn:hover {
+    transform: scale(0.95);
+    box-shadow: 0 8px 12px rgba(149, 97, 199, 0.15), 0 3px 6px rgba(149, 97, 199, 0.15);
+}
+
+.modal-cancel-btn {
+    height: 40px;
+    padding: 10px 20px;
+    border: 2px solid transparent;
+    border-radius: 35px;
+    background: var(--dark-grey);
+    color: var(--light);
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    grid-gap: 10px;
+    font-weight: 500;
+    font-size: 1rem;
+    box-shadow: 0 8px 12px rgba(149, 97, 199, 0.15), 0 3px 6px rgba(149, 97, 199, 0.15);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.modal-cancel-btn:hover {
+    transform: scale(0.95);
+    box-shadow: 0 8px 12px rgba(149, 97, 199, 0.15), 0 3px 6px rgba(149, 97, 199, 0.15);
+}
+
+/*==================================Delete Modal CSS Ends=================================*/
+
+/*==================================Assign Tests Modal CSS Starts=================================*/
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 2100;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.4);
+    /* Overlay effect */
+}
+
+.modal-content {
+    background-color: var(--light);
+    margin: 2% auto;
+    padding: 60px;
+    border: 1px solid #888;
+    border-radius: 10px;
+    width: 75%;
+    height: auto;
+    position: relative;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    -webkit-animation-name: animatetop;
+    -webkit-animation-duration: 0.4s;
+    animation-name: animatetop;
+    animation-duration: 0.4s
+}
+
+.assigntestclose {
+    margin-top: 5px;
+    margin-right: 10px;
+    float: right;
+    font-size: 32px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.assigntestclose:hover,
+.assigntestclose:focus {
+    color: var(--soft-red);
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.testscontainer {
+    /* background-color: var(--light); */
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.testscontainer h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 3rem;
+    font-weight: 700;
+    color: var(--purple);
+}
+
+.testscontainer .patientInfo {
+    padding: 20px 60px;
+    background-color: var(--background);
+    border-radius: 10px;
+    margin-bottom: 15px;
+}
+
+.testscontainer .patientInfo p {
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.testscontainer .patientInfo p .testlabel {
+    color: var(--dark);
+    font-size: 1.1rem;
+    font-weight: 700;
+    margin-left: 80px;
+    margin-right: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    align-self: flex-start;
+    width: 15%;
+}
+
+.testscontainer .patientInfo p span {
+    width: 70%;
+}
+
+.testscontainer .test-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+
+.testscontainer .test {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--background);
+    padding: 16px;
+    border-radius: 10px;
+    gap: 10px;
+    /* width: 100%; */
+}
+
+.testscontainer .test .testslabel {
+    margin-top: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    width: 100%;
+}
+
+.testscontainer .test p {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    width: 80%;
+    font-size: 1.2rem;
+}
+
+.testscontainer input[type="checkbox"] {
+    transform: scale(2);
+    margin-right: 15px;
+    margin-left: 15px;
+    width: 10%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    align-self: center;
+}
+
+.buttons {
+    margin-top: 25px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    gap: 20px;
+}
+
+.buttons .savebtn {
+    padding: 10px 40px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    font-size: 1.4rem;
+    font-weight: 600;
+    letter-spacing: .09rem;
+    cursor: pointer;
+    border-radius: 25px;
+    border: 2px solid var(--purple);
+    background-color: var(--purple);
+    color: var(--light);
+}
+
+.buttons .savebtn:hover {
+    background-color: var(--light);
+    color: var(--purple);
+}
+
+.testscontainer .cancelbtn {
+    padding: 10px 40px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    font-size: 1.4rem;
+    font-weight: 600;
+    letter-spacing: .09rem;
+    cursor: pointer;
+    border-radius: 25px;
+    border: 2px solid var(--dark-grey);
+    background-color: var(--dark-grey);
+    color: var(--light);
+}
+
+.testscontainer .cancelbtn:hover {
+    background-color: var(--light);
+    color: var(--dark-grey);
+}
+
+/*==================================Assign Tests Modal CSS Ends================================*/
+
+
+/*======================================Side Menu CSS Starts===================================*/
+
+#sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 250px;
+    height: 100%;
+    background: var(--light);
+    z-index: 2000;
+    font-family: var(--poppins);
+    transition: width .3s ease;
+    overflow-x: hidden;
+    scrollbar-width: none;
+    transform: translateX(0);
+}
+
+#sidebar .sitename {
+    font-size: 34px;
+    font-weight: 700;
+    height: 56px;
+    display: flex;
+    align-items: center;
+    color: var(--purple);
+    position: sticky;
+    top: 10px;
+    background: var(--light);
+    z-index: 500;
+    padding-bottom: 20px;
+    box-sizing: content-box;
+    margin-left: 0;
+}
+
+#sidebar .site-icon {
+    min-width: 70px;
+    display: flex;
+    justify-content: center;
+    cursor: pointer;
+    color: var(--purple);
+    font-weight: 600;
+    font-size: 2rem;
+}
+
+#sidebar .side-menu {
+    width: 100%;
+    margin-top: 48px;
+}
+
+#sidebar .side-menu li {
+    height: 65px;
+    background: transparent;
+    margin-left: 6px;
+    border-radius: 15px 0 0 15px;
+    padding: 5px;
+    margin-top: 20px;
+}
+
+#sidebar .side-menu li.active {
+    background: var(--background);
+    position: relative;
+}
+
+#sidebar .side-menu li.active::before {
+    content: '';
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    border-radius: 20%;
+    top: -40px;
+    right: 0;
+    box-shadow: 20px 20px 0 var(--background);
+    z-index: -1;
+}
+
+#sidebar .side-menu li.active::after {
+    content: '';
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    border-radius: 20%;
+    bottom: -40px;
+    right: 0;
+    box-shadow: 20px -20px 0 var(--background);
+    z-index: -1;
+}
+
+#sidebar .side-menu li a {
+    width: 100%;
+    height: 100%;
+    background: var(--light);
+    display: flex;
+    align-items: center;
+    border-radius: 15px;
+    font-size: 16px;
+    color: var(--dark);
+    white-space: nowrap;
+    overflow-x: hidden;
+    transition: all 600ms ease-out;
+}
+
+#sidebar .side-menu li a:hover {
+    color: var(--purple);
+    margin-left: .5rem;
+}
+
+#sidebar .side-menu li a .side-menu-icons {
+    min-width: calc(80px - ((4px + 6px) * 2));
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2rem;
+    font-weight: 600;
+    color: var(--dark);
+}
+
+#sidebar .side-menu li.active a .side-menu-icons {
+    color: var(--purple);
+}
+
+#sidebar .side-menu li.active a {
+    color: var(--purple);
+}
+
+#sidebar .side-menu li.active a:hover {
+    margin-left: 0;
+}
+
+#sidebar .side-menu li a span {
+    font-size: 1.3rem;
+    font-weight: 600;
+}
+
+
+/*=================Sidebar Hide CSS Starts=================*/
+
+#sidebar.hide {
+    width: 70px;
+    transform: translateX(-100% - 250px);
+}
+
+#sidebar.hide .side-menu li a {
+    width: calc(68px - (4px * 2));
+    transition: width .3s ease;
+}
+
+#sidebar.hide .side-menu li a:hover {
+    margin-left: 0;
+}
+
+.sidebar-no-transition {
+    transition: none !important;
+}
+
+#sidebar.preload {
+    visibility: hidden;
+}
+
+#content {
+    position: relative;
+    width: calc(100% - 250px);
+    left: 250px;
+    transition: margin-left .3s ease;
+}
+
+#sidebar.hide~#content {
+    width: calc(100% - 60px);
+    left: 60px;
+}
+
+
+/*=================Sidebar Hide CSS Ends=================*/
+/*==============================================Side Menu CSS Ends===================================================*/
+
+
+
+/*============================================Content Section Starts=================================================*/
+/*==================Content Section - Navbar CSS Starts=================*/
+
+#content .navbar {
+    height: 56px;
+    background: var(--light);
+    padding: 0 24px;
+    display: flex;
+    align-items: center;
+    grid-gap: 24px;
+    font-family: var(--poppins);
+    position: sticky;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+}
+
+#content .navbar::before {
+    content: '';
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    bottom: -40px;
+    left: 0;
+    border-radius: 20%;
+    box-shadow: -20px -20px 0 var(--light);
+}
+
+#content .navbar .menu-icon {
+    cursor: pointer;
+    color: var(--dark);
+    font-weight: 600;
+    font-size: 2rem;
+    margin: 9px 20px 5px 17px;
+}
+
+#content .navbar .menu-icon:hover {
+    color: var(--purple);
+}
+
+#content .navbar .nav-link {
+    font-size: 1.1rem;
+    font-weight: 500;
+    transition: .3s ease;
+    margin-top: 4px;
+    margin-left: -40px;
+    margin-right: 20px;
+    color: var(--dark);
+}
+
+#content .navbar form {
+    max-width: 400px;
+    width: 100%;
+    margin-right: auto;
+}
+
+#content .navbar form .form-input {
+    display: flex;
+    align-items: center;
+    height: 36px;
+}
+
+#content .navbar form .form-input input {
+    flex-grow: 1;
+    padding: 0 16px;
+    height: 100%;
+    border: none;
+    background: var(--background);
+    border-radius: 36px 0 0 36px;
+    outline: none;
+    width: 100%;
+    color: var(--light);
+}
+
+#content .navbar form .form-input .search-btn-icon {
+    width: 36px;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: var(--purple);
+    color: var(--light);
+    font-size: 1rem;
+    border: none;
+    outline: none;
+    border-radius: 0 36px 36px 0;
+    cursor: pointer;
+    margin-right: 20px;
+}
+
+#content .navbar .profile-img img {
+    width: 36px;
+    height: 36px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin-top: 10px;
+}
+
+#content .navbar .switch-mode {
+    display: block;
+    min-width: 50px;
+    height: 25px;
+    border-radius: 25px;
+    background: var(--background);
+    cursor: pointer;
+    position: relative;
+    margin-top: 5px;
+}
+
+#content .navbar .switch-mode::before {
+    content: '';
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    bottom: 2px;
+    width: calc(25px - 4px);
+    background: var(--purple);
+    border-radius: 50%;
+    transition: all .3s ease;
+}
+
+#content .navbar #switch-mode:checked+.switch-mode::before {
+    left: calc(100% - (25px - 4px) - 2px);
+}
+
+#content .navbar .setting-icon {
+    cursor: pointer;
+    color: var(--dark);
+    font-weight: 600;
+    font-size: 2rem;
+    margin: 9px 20px 5px 40px;
+}
+
+#content .navbar .setting-icon:hover {
+    color: var(--purple);
+}
+
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    background-color: var(--light);
+    list-style: none;
+    padding: 15px 20px;
+    margin: 10px;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.1);
+    width: 11rem;
+    right: 0;
+    left: auto;
+    transition: all 600ms linear;
+    border-radius: 10px;
+    border: 1px solid;
+}
+
+.dropdown-menu li {
+    padding: 5px 5px;
+    text-decoration: none;
+    color: var(--dark);
+    font-size: 1.2rem;
+    display: flex;
+    align-items: center;
+    font-weight: 500;
+}
+
+.dropdown-menu li a {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.dropdown-menu li a .dropdown-icons {
+    cursor: pointer;
+    color: var(--dark);
+    font-weight: 600;
+    font-size: 1.6rem;
+    margin-right: 20px;
+}
+
+.dropdown-menu li a .text {
+    color: var(--dark);
+    font-size: 1.1rem;
+    font-weight: 600;
+}
+
+.dropdown-menu li a .logout {
+    color: var(--soft-red);
+}
+
+.dropdown-menu.show {
+    display: block;
+}
+
+/*==================Content Section - Navbar CSS Ends=================*/
+
+
+/*==================Content Section - Main CSS Starts=================*/
+
+#content main {
+    width: 100%;
+    padding: 15px 25px;
+    font-family: var(--poppins);
+    max-height: calc(100vh - 56px);
+    overflow-y: auto;
+}
+
+/*============Content Section - Main of index.html CSS Starts=========*/
+
+#content main .head {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#content main .head-title {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    grid-gap: 16px;
+    flex-wrap: wrap;
+}
+
+#content main .head-title .left h1 {
+    font-size: 35px;
+    font-weight: 600;
+    color: var(--dark);
+}
+
+
+#content main .box-info {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    grid-gap: 24px;
+    margin-bottom: 10px;
+}
+
+#content main .box-info li {
+    padding: 34px;
+    background: var(--light);
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    grid-gap: 24px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.15), 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+#content main .box-info li:hover {
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.30), 0 3px 6px rgba(0, 0, 0, 0.3);
+}
+
+#content main .box-info li .material-symbols-sharp {
+    width: 70px;
+    height: 70px;
+    border-radius: 15px;
+    font-size: 36px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#content main .box-info li:nth-child(1) .box-icons {
+    background: var(--lilac);
+    color: var(--dark);
+}
+
+#content main .box-info li:nth-child(2) .box-icons {
+    background: var(--light-purple);
+    color: var(--dark);
+}
+
+#content main .box-info li:nth-child(3) .box-icons {
+    background: var(--green);
+    color: var(--dark);
+}
+
+#content main .box-info li .text h3 {
+    font-size: 30px;
+    font-weight: 600;
+    color: var(--dark);
+}
+
+#content main .box-info li .text p {
+    color: var(--dark);
+    font-size: 18px;
+    font-weight: 500;
+}
+
+/*============Content Section - Main of index.html CSS Ends=========*/
+
+
+/*========Content Section - Main of doctorspage.html CSS Starts=====*/
+
+#content main .table-data {
+    margin-top: 10px;
+    color: var(--dark);
+}
+
+#content main .table-data>div {
+    border-radius: 15px;
+    background: var(--light);
+    padding: 24px;
+    overflow-x: auto;
+}
+
+#content main .table-data .head {
+    display: flex;
+    grid-gap: 16px;
+    margin-bottom: 10px;
+}
+
+#content main .table-data .head h3 {
+    /* margin-right: auto; */
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 10px;
+    color: var(--purple);
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+#content main .table-data .head .right .addnewbtn {
+    height: 46px;
+    padding: 25px 45px;
+    border: 2px solid transparent;
+    border-radius: 15px;
+    background: var(--purple);
+    color: var(--light);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    grid-gap: 10px;
+    font-weight: 500;
+    margin-top: 10px;
+    font-size: 1.5rem;
+    box-shadow: 0 8px 12px rgba(149, 97, 199, 0.15), 0 3px 6px rgba(149, 97, 199, 0.15);
+}
+
+#content main .table-data .head .addnewbtn:hover {
+    color: var(--purple);
+    border: 2px solid var(--purple);
+    background: var(--hover);
+    box-shadow: 0 8px 12px rgba(149, 97, 199, 0.15), 0 3px 6px rgba(149, 97, 199, 0.15);
+}
+
+#content main .table-data .order {
+    flex-grow: 1;
+    flex-basis: 500px;
+}
+
+#content main .table-data .order table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+}
+
+#content main .table-data .order table thead tr th {
+    padding-top: 15px;
+    padding-bottom: 15px;
+    font-size: 1.2rem;
+    text-align: center;
+    letter-spacing: .05rem;
+    background-color: var(--light-grey);
+    border: 1px solid var(--dark-grey);
+}
+
+#content main .table-data .order table thead tr th input {
+    transform: scale(1.7);
+    margin-left: 10px;
+}
+
+#content main .table-data .order table tbody tr td {
+    padding-top: 15px;
+    padding-bottom: 15px;
+    text-align: center;
+    border: 1px solid var(--dark-grey);
+    font-size: 1.1rem;
+}
+
+#content main .table-data .order table tbody tr td:first-child {
+    width: 6%;
+}
+
+#content main .table-data .order table tbody tr td:nth-child(2) {
+    width: 4%;
+}
+
+#content main .table-data .order table tbody tr td:nth-child(3) {
+    width: 15%;
+}
+
+#content main .table-data .order table tbody tr td:nth-child(4) {
+    width: 6%;
+}
+
+#content main .table-data .order table tbody tr td:nth-child(5) {
+    width: 10%;
+}
+
+#content main .table-data .order table tbody tr td:nth-child(6) {
+    width: 18%;
+}
+
+#content main .table-data .order table tbody tr td:nth-child(7) {
+    width: 18%;
+}
+
+#content main .table-data .order table tbody tr td:nth-child(8) {
+    width: 10%;
+}
+
+#content main .table-data .order table tbody tr td:last-child {
+    width: 13%;
+}
+
+#content main .table-data .order table tbody tr:hover {
+    background: var(--background);
+}
+
+#content main .table-data .order table tr td {
+    padding: 10px;
+}
+
+#content main .table-data .order table tr td .table-icons {
+    font-size: 1.5rem;
+    margin-right: 6px;
+    color: var(--purple);
+    font-weight: 600;
+    cursor: pointer;
+}
+
+#content main .table-data .order table tr td label {
+    font-size: .9rem;
+    align-self: center;
+    display: flex;
+    justify-content: center;
+}
+
+#content main .table-data .order table tr td input {
+    transform: scale(1.5);
+    margin-right: 5px;
+}
+
+#content main .table-data .order table tr td .active {
+    margin-right: 12px;
+}
+
+#content main .table-data .order table tr td .activecolor {
+    accent-color: #139217;
+    /* margin-right: 18px; */
+}
+
+#content main .table-data .order table tr td .inactivecolor {
+    accent-color: #f44336;
+}
+
+.tablelabel {
+    display: block;
+    color: var(--dark);
+    font-size: 0.3rem;
+    font-weight: 600;
+    margin-bottom: 5px;
+    align-self: center;
+}
+
+table.dataTable th.dt-type-numeric,
+table.dataTable th.dt-type-date,
+table.dataTable td.dt-type-numeric,
+table.dataTable td.dt-type-date {
+    text-align: center;
+}
+
+/*============Content Section - Main of index.html CSS Ends=========*/
+/*============================================Content Section Ends=================================================*/
+
+
+
+
+/*===============================================MCQs Page 1 CSS Starts==========================================*/
+
+.mcqscontainer {
+    margin: auto;
+    background-color: var(--light);
+    padding: 20px 110px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.mcqscontainer h1 {
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    font-size: 2.5rem;
+    color: var(--purple);
+}
+
+.mcqscontainer .mcq {
+    margin-bottom: 25px;
+
+}
+
+.mcqscontainer .mcq p {
+    font-weight: 500;
+    font-size: 1.3rem;
+    letter-spacing: 0.1rem;
+    word-spacing: .2rem;
+    margin-top: 30px;
+}
+
+.mcqscontainer input[type="radio"] {
+    transform: scale(1.5);
+    margin-right: 10px;
+}
+
+.mcqscontainer .options {
+    margin-top: 15px;
+}
+
+.mcqscontainer .option {
+    display: block;
+    margin-bottom: 8px;
+    font-size: 1.2rem;
+    letter-spacing: 0.1rem;
+    word-spacing: .09rem;
+}
+
+.mcqscontainer .option span {
+    color: var(--purple);
+    font-weight: 700;
+}
+
+.mcqscontainer .buttons {
+    text-align: center;
+}
+
+.mcqscontainer .mcqsave {
+    padding: 10px 40px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    font-size: 1.4rem;
+    font-weight: 600;
+    letter-spacing: .09rem;
+    cursor: pointer;
+    border-radius: 25px;
+    border: 2px solid var(--purple);
+    background-color: var(--purple);
+    color: var(--light);
+}
+
+.mcqscontainer .mcqsave:hover {
+    background-color: var(--light);
+    color: var(--purple);
+}
+
+.mcqscontainer .mcqcancel {
+    padding: 10px 30px;
+    margin: 10px;
+    font-size: 1.4rem;
+    font-weight: 600;
+    letter-spacing: .09rem;
+    cursor: pointer;
+    border-radius: 25px;
+    border: 2px solid var(--dark-grey);
+    background-color: var(--dark-grey);
+    color: var(--light);
+}
+
+.mcqscontainer .mcqcancel:hover {
+    background-color: var(--light);
+    color: var(--dark-grey);
+}
+
+/*===============================================MCQs Page 1 CSS Ends==========================================*/
+
+
+
+/*===============================================MCQs Page 2 CSS Starts==========================================*/
+
+.mcqscontainer2 {
+    margin: auto;
+    background-color: var(--light);
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.question-container {
+    display: none;
+}
+
+h1 {
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    font-size: 2.5rem;
+    color: var(--purple);
+}
+
+.active-question {
+    display: block;
+}
+
+.question-wrapper {
+    margin-bottom: 20px;
+    margin-left: 60px;
+}
+
+.mcqscontainer2 .question-wrapper p {
+    margin-bottom: 15px;
+    font-weight: 600;
+    font-size: 1.3rem;
+    letter-spacing: 0.1rem;
+    word-spacing: .2rem;
+    margin-top: 30px;
+    margin-bottom: 20px;
+}
+
+.mcqscontainer2 .question-wrapper .mcqoption {
+    font-weight: 500;
+    font-size: 1.3rem;
+    letter-spacing: 0.1rem;
+    word-spacing: .2rem;
+    margin-top: 1px;
+}
+
+
+.mcqscontainer2 .question-wrapper input[type="radio"] {
+    transform: scale(1.5);
+    margin-right: 10px;
+}
+
+
+.controls {
+    margin-top: 1px;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.controls .mcqprev {
+    padding: 10px 30px;
+    font-size: 1.4rem;
+    font-weight: 600;
+    letter-spacing: .09rem;
+    cursor: pointer;
+    border-radius: 15px;
+    border: 2px solid gray;
+    background-color: gray;
+    color: var(--light);
+}
+
+.controls .mcqnext {
+    padding: 10px 30px;
+    font-size: 1.4rem;
+    font-weight: 600;
+    letter-spacing: .09rem;
+    cursor: pointer;
+    border-radius: 15px;
+    border: 2px solid gray;
+    background-color: gray;
+    color: var(--light);
+}
+
+.controls .mcqsubmit {
+    padding: 10px 30px;
+    font-size: 1.4rem;
+    font-weight: 600;
+    letter-spacing: .09rem;
+    cursor: pointer;
+    border-radius: 15px;
+    border: 2px solid var(--purple);
+    background-color: var(--purple);
+    color: var(--light);
+}
+
+
+/*===============================================MCQs Page 2 CSS Ends==========================================*/
+
+
+
+
+
+
+/* ======================================================================================================================== */
+/* ======================================================================================================================== */
+/*===============================================Media Queries for Responsiveness==========================================*/
+/* ======================================================================================================================== */
+/* ======================================================================================================================== */
+
+
+@media only screen and (max-width: 1200px) {
+
+
+    /*================Add Patient Modal================*/
+
+    .modal-content-addpatient {
+        margin: 12% auto;
+        width: 60%;
+    }
+
+    /*================View Modal================*/
+    .modal-content-view {
+        margin: 18% auto;
+        width: 60%;
+    }
+
+    .modal-content-view h2 {
+        font-size: 1.7rem;
+    }
+
+    .modal-content-view p .viewlabel {
+        font-size: 1rem;
+    }
+
+    .modal-content-view p span {
+        font-size: .9rem;
+        margin-left: 10px;
+    }
+
+    /*================Edit Modal================*/
+
+    .modal-content-edit {
+        margin: 10% auto;
+        width: 65%;
+    }
+
+    .modal-content-edit h2 {
+        font-size: 2.2rem;
+    }
+
+        /*================Delete Modal================*/
+
+        .modal-del .modal-content-del {
+            width: 65%;
+            margin: 30% auto;
+        }
+    
+        .buttons {
+            gap: 5px;
+        }
+    
+        .modal-del-btn {
+            height: 35px;
+        }
+    
+        .modal-cancel-btn {
+            height: 35px;
+        }
+
+    /*============Assign Test Modal============*/
+
+    .modal-content {
+        margin: 10% auto;
+        width: 80%;
+        overflow-y: auto;
+    }
+
+    .modal-content h2 {
+        font-size: 1.5rem;
+    }
+
+    .modal-content .form-group label {
+        font-size: .9rem;
+    }
+
+    .testscontainer .patientInfo {
+        padding: 20px 30px;
+    }
+
+    .testscontainer .patientInfo p .testlabel {
+        font-size: 1.1rem;
+        width: 25%;
+        margin-left: 10px;
+    }
+
+    .testscontainer .test p {
+        font-size: 1.1rem;
+    }
+
+    /*================Doctors Page================*/
+
+    #content main .table-data .head h3 {
+        font-size: 2.3rem;
+    }
+
+    #content main .table-data .head .right .addnewbtn {
+        font-size: 1.2rem;
+    }
+
+
+    #content main .table-data .order table thead tr th {
+        padding-top: 10px;
+        padding-bottom: 10px;
+        font-size: 1.1rem;
+    }
+    
+    #content main .table-data .order table thead tr th input {
+        margin-left: 8px;
+    }
+    
+    #content main .table-data .order table tbody tr td {
+        padding-top: 10px;
+        padding-bottom: 10px;
+        font-size: 1.1rem;
+    }
+    
+    #content main .table-data .order table tr td {
+        padding: 8px;
+    }
+
+    #content main .table-data .order table tr td .table-icons {
+        font-size: 1.5rem;
+        margin-right: 5px;
+    }
+    
+    #content main .table-data .order table tr td input {
+        margin-right: 5px;
+    }
+
+
+}
+
+
+
+@media only screen and (max-width: 992px) {
+
+    /*===============Add Patient Modal================*/
+
+    .modal-content-addpatient {
+        margin: 16% auto;
+        width: 70%;
+    }
+
+    /*================View Modal================*/
+
+    .modal-content-view {
+        margin: 18% auto;
+        width: 70%;
+    }
+
+    .modal-content-view h2 {
+        font-size: 1.7rem;
+    }
+
+    .modal-content-view p .viewlabel {
+        font-size: .85rem;
+    }
+
+    .modal-content-view p span {
+        font-size: .8rem;
+        margin-left: 10px;
+    }
+
+    /*================Edit Modal================*/
+
+    .modal-content-edit {
+        margin: 14% auto;
+        width: 75%;
+    }
+
+    .modal-content-edit h2 {
+        font-size: 2rem;
+    }
+
+        /*================Delete Modal================*/
+
+        .modal-del .modal-content-del {
+            width: 80%;
+            margin: 40% auto;
+        }
+    
+        .buttons {
+            gap: 2px;
+        }
+    
+        .modal-del-btn {
+            height: 35px;
+        }
+    
+        .modal-cancel-btn {
+            height: 35px;
+        }
+
+    /*============Assign Test Modal============*/
+
+    .modal-content {
+        margin: 10% auto;
+        width: 85%;
+        overflow-y: auto;
+        padding: 50px;
+    }
+
+    .modal-content h2 {
+        font-size: 1.5rem;
+    }
+
+    .modal-content .form-group label {
+        font-size: .8rem;
+    }
+
+    .testscontainer .patientInfo {
+        padding: 10px 20px;
+    }
+
+    .testscontainer .patientInfo p .testlabel {
+        font-size: 1rem;
+        width: 25%;
+        margin-left: 10px;
+    }
+
+    .testscontainer .test {
+        padding: 10px;
+    }
+
+    .testscontainer .test p {
+        font-size: 1rem;
+    }
+
+    /*================Doctors Page================*/
+
+    #content main .table-data .head h3 {
+        font-size: 2.1rem;
+    }
+
+    #content main .table-data .head .right .addnewbtn {
+        font-size: 1.2rem;
+        padding: 20px 20px;
+    }
+
+    #content main .table-data .order table thead tr th {
+        padding-top: 8px;
+        padding-bottom: 8px;
+        font-size: 1rem;
+    }
+    
+    #content main .table-data .order table thead tr th input {
+        transform: scale(1.6);
+        margin-left: 6px;
+    }
+    
+    #content main .table-data .order table tbody tr td {
+        padding-top: 8px;
+        padding-bottom: 8px;
+        font-size: 1rem;
+    }
+    
+    #content main .table-data .order table tr td {
+        padding: 7px;
+    }
+
+    #content main .table-data .order table tr td .table-icons {
+        font-size: 1.5rem;
+        margin-right: 10px;
+    }
+    
+    #content main .table-data .order table tr td label {
+        font-size: .9rem;
+    }
+    
+    #content main .table-data .order table tr td input {
+        transform: scale(1.4);
+        margin-right: 5px;
+    }
+
+
+}
+
+
+
+@media only screen and (max-width: 768px) {
+
+
+    /*===============Add Patient Modal================*/
+
+    .modal-content-addpatient {
+        margin: 20% auto;
+        width: 80%;
+    }
+
+    /*================View Modal================*/
+    .modal-content-view {
+        margin: 25% auto;
+        width: 75%;
+        padding: 30px;
+    }
+
+    .modal-content-view h2 {
+        font-size: 1.7rem;
+    }
+
+    .modal-content-view p .viewlabel {
+        font-size: .8rem;
+    }
+
+    .modal-content-view p span {
+        font-size: .75rem;
+        margin-left: 10px;
+    }
+
+    /*================Edit Modal================*/
+
+    .modal-content-edit {
+        margin: 18% auto;
+        padding: 50px;
+        width: 85%;
+    }
+
+    .modal-content-edit h2 {
+        font-size: 1.7rem;
+        padding-bottom: 10px;
+    }
+
+    .editclose {
+        margin-top: 0px;
+        font-size: 32px;
+    }
+
+    
+    /*================Delete Modal================*/
+
+    .modal-del .modal-content-del {
+        width: 85%;
+        margin: 45% auto;
+        padding: 30px;
+    }
+
+    .buttons {
+        gap: 2px;
+    }
+
+    .modal-del-btn {
+        height: 35px;
+    }
+
+    .modal-cancel-btn {
+        height: 35px;
+    }
+
+    /*============Assign Test Modal============*/
+
+    .modal-content {
+        margin: 10% auto;
+        width: 90%;
+        overflow-y: auto;
+        padding: 40px;
+    }
+
+    .modal-content h2 {
+        font-size: 1.5rem;
+    }
+
+    .modal-content .form-group label {
+        font-size: .7rem;
+    }
+
+    .testscontainer .patientInfo {
+        padding: 10px 20px;
+    }
+
+    .testscontainer .patientInfo p .testlabel {
+        font-size: .9rem;
+        width: 25%;
+        margin-left: 10px;
+    }
+
+    .testscontainer .patientInfo p .spanpatientinfo {
+        font-size: .9rem;
+    }
+
+    .testscontainer .test {
+        padding: 8px;
+    }
+
+    .testscontainer .test p {
+        font-size: .7rem;
+    }
+
+    .testscontainer input[type="checkbox"] {
+        transform: scale(1.7);
+        margin-right: 10px;
+        margin-left: 10px;
+    }
+
+    .testscontainer .test-grid {
+        gap: 20px;
+    }
+
+    .buttons {
+        margin-top: 20px;
+    }
+
+    .buttons .savebtn {
+        padding: 10px 30px;
+        font-size: 1.2rem;
+    }
+
+    .testscontainer .cancelbtn {
+        padding: 10px 30px;
+        font-size: 1.2rem;
+    }
+
+
+    /*================Doctors Page================*/
+
+    #content main .table-data .head h3 {
+        font-size: 2rem;
+    }
+
+    #content main .table-data .head .right .addnewbtn {
+        font-size: 1.1rem;
+    }
+
+    div.dt-container div.dt-layout-row:not(.dt-layout-table) {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    div.dt-container label {
+        font-size: .9rem;
+    }
+
+    div.dt-container select.dt-input {
+        padding: 1px;
+    }
+
+    div.dt-container .dt-search input {
+        padding: 3px;
+    }
+
+    #content main .table-data .order table thead tr th {
+        padding-top: 7px;
+        padding-bottom: 7px;
+        font-size: 1rem;
+    }
+    
+    #content main .table-data .order table thead tr th input {
+        transform: scale(1.5);
+        margin-left: 5px;
+    }
+    
+    #content main .table-data .order table tbody tr td {
+        padding-top: 7px;
+        padding-bottom: 7px;
+        font-size: 1rem;
+    }
+    
+    #content main .table-data .order table tr td {
+        padding: 5px;
+    }
+
+    #content main .table-data .order table tr td .table-icons {
+        font-size: 1.5rem;
+        margin-right: 10px;
+    }
+    
+    #content main .table-data .order table tr td label {
+        font-size: .85rem;
+    }
+    
+    #content main .table-data .order table tr td input {
+        transform: scale(1.3);
+        margin-right: 4px;
+    }
+
+
+}
+
+
+
+@media only screen and (max-width: 600px) {
+
+
+    /*===============Add Patient Modal================*/
+
+    .modal-content-addpatient {
+        margin: 24% auto;
+        padding: 30px;
+        width: 80%;
+    }
+
+    .modal-content-addpatient h2 {
+        font-size: 1.9rem;
+    }
+
+    .modal-content-addpatient .form-group label {
+        padding-right: 20px;
+    }
+
+    .addpatientclose {
+        margin-top: 0px;
+    }
+
+    .addpatient {
+        height: 36px;
+        padding: 10px 25px;
+    }
+
+
+    /*================View Modal================*/
+    .modal-content-view {
+        margin: 35% auto;
+        width: 85%;
+        padding: 20px;
+    }
+
+    .modal-content-view h2 {
+        font-size: 1.7rem;
+    }
+
+    .modal-content-view p .viewlabel {
+        font-size: .75rem;
+    }
+
+    .modal-content-view p span {
+        font-size: .65rem;
+        margin-left: 10px;
+    }
+
+    .viewclose {
+        font-size: 1.5rem;
+    }
+
+    /*================Edit Modal================*/
+
+    .modal-content-edit {
+        margin: 20% auto;
+        padding: 50px 70px;
+        width: 90%;
+    }
+
+    .modal-content-edit h2 {
+        font-size: 1.6rem;
+    }
+
+    .modal-content-edit .form-group .input {
+        width: 80%;
+    }
+
+    /*================Delete Modal================*/
+
+    .modal-del .modal-content-del {
+        width: 90%;
+        margin: 50% auto;
+        padding: 20px;
+    }
+
+    .modal-content-del p {
+        font-size: 1rem;
+    }
+
+    .buttons {
+        gap: 2px;
+    }
+
+    .modal-del-btn {
+        height: 30px;
+    }
+
+    .modal-cancel-btn {
+        height: 30px;
+    }
+
+    /*============Assign Test Modal============*/
+
+    .modal-content {
+        margin: 10% auto;
+        width: 90%;
+        /* max-height: 450px; */
+        overflow-y: auto;
+        padding: 30px;
+    }
+
+    .modal-content h2 {
+        font-size: 1.5rem;
+    }
+
+    .modal-content .form-group label {
+        font-size: .6rem;
+    }
+
+    .testscontainer .patientInfo {
+        padding: 10px 20px;
+    }
+
+    .testscontainer .patientInfo p .testlabel {
+        font-size: .8rem;
+        width: 25%;
+        margin-left: 10px;
+    }
+
+    .testscontainer .patientInfo p .spanpatientinfo {
+        font-size: .8rem;
+    }
+
+    .testscontainer .test {
+        padding: 6px;
+    }
+
+    .testscontainer .test p {
+        font-size: .7rem;
+    }
+
+
+    .testscontainer input[type="checkbox"] {
+        transform: scale(1.5);
+        margin-right: 10px;
+        margin-left: 10px;
+    }
+
+
+    .testscontainer .test-grid {
+        gap: 15px;
+    }
+
+    .buttons {
+        margin-top: 20px;
+    }
+
+    .buttons .savebtn {
+        padding: 10px 20px;
+        font-size: 1.1rem;
+    }
+
+    .testscontainer .cancelbtn {
+        padding: 10px 20px;
+        font-size: 1.1rem;
+    }
+
+    /*================Doctors Page================*/
+
+    #sidebar .side-menu li a .side-menu-icons{
+        font-size: 1.8rem;
+    }
+
+    #content .navbar .menu-icon{
+        font-size: 1.9rem;
+        margin: 7px 60px 3px -2px;
+    }
+
+    #content .navbar .nav-link{
+        font-size: 0.9rem;
+        margin-left: -80px;
+    }
+
+    #content .navbar .setting-icon{
+        font-size: 1.8rem;
+        margin: 7px -20px 3px 15px;
+    }
+
+    #content .navbar .profile-img img{
+        display: none;
+    }
+
+    #content .navbar .switch-mode{
+        display: none;
+    }
+
+    #content .navbar form .form-input {
+        display: none;
+    }
+
+    #content main .head {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+
+    #content main .table-data .head h3 {
+        font-size: 1.8rem;
+        margin-bottom: 0px;
+        align-items: center;
+    }
+
+    #content main .table-data .head .right .addnewbtn {
+        height: 16px;
+        font-size: 1rem;
+        padding: 20px 30px;
+        margin-top: 0px;
+        margin-bottom: 10px;
+    }
+
+    #content main .table-data {
+        display: block;
+        overflow: auto;
+        white-space: nowrap;
+    }
+
+    div.dt-container div.dt-layout-row:not(.dt-layout-table) {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+
+    #content main .table-data .order table thead tr th {
+        padding-top: 10px;
+        padding-bottom: 10px;
+        font-size: 1rem;
+    }
+    
+    #content main .table-data .order table thead tr th input {
+        transform: scale(1.4);
+        margin-left: 4px;
+    }
+    
+    #content main .table-data .order table tbody tr td {
+        padding-top: 6px;
+        padding-bottom: 6px;
+        font-size: .9rem;
+    }
+    
+    #content main .table-data .order table tr td {
+        padding: 4px;
+    }
+
+    #content main .table-data .order table tr td .table-icons {
+        font-size: 1.4rem;
+        margin-right: 4px;
+    }
+    
+    #content main .table-data .order table tr td label {
+        font-size: .8rem;
+    }
+    
+    #content main .table-data .order table tr td input {
+        transform: scale(1.3);
+        margin-right: 4px;
+    }
+
+
+}
+
+
+
+@media only screen and (max-width: 460px) {
+
+    /*===============Add Patient Modal================*/
+
+    .modal-content-addpatient {
+        margin: 28% auto;
+        padding: 30px;
+        width: 90%;
+    }
+
+    .modal-content-addpatient h2 {
+        font-size: 1.4rem;
+    }
+
+    .modal-content-addpatient .addpatientform {
+        padding-left: 20px;
+    }
+
+    .modal-content-addpatient .form-group label {
+        font-size: .8rem;
+    }
+
+    .modal-content-addpatient .form-group .input {
+        width: 100%;
+    }
+
+    .addpatientclose {
+        margin-top: 0px;
+        margin-bottom: 30px;
+        margin-left: 10px;
+    }
+
+    .addpatient {
+        height: 36px;
+        padding: 10px 25px;
+        font-size: .9rem;
+    }
+
+    /*================View Modal================*/
+
+    .modal-content-view {
+        margin: 40% auto;
+        width: 85%;
+        padding: 10px;
+    }
+
+    .modal-content-view h2 {
+        font-size: 1.5rem;
+    }
+
+    .modal-content-view p .viewlabel {
+        font-size: .60rem;
+    }
+
+    .modal-content-view p span {
+        font-size: .55rem;
+        margin-left: 10px;
+        width: 60%;
+    }
+
+    /*================Edit Modal================*/
+
+    .modal-content-edit {
+        margin: 30% auto;
+        padding: 30px 65px;
+        width: 90%;
+    }
+
+    .modal-content-edit h2 {
+        font-size: 1.4rem;
+    }
+
+    .modal-content-edit .form-group label {
+        padding-right: 15px;
+        font-size: .8rem;
+        font-weight: 700;
+        width: 10%;
+    }
+
+    .modal-content-edit .form-group .input {
+        width: 100%;
+    }
+
+    
+    /*================Delete Modal================*/
+
+    .modal-del .modal-content-del {
+        width: 90%;
+        /* height: 40%; */
+        margin: 65% auto;
+        padding: 20px;
+    }
+
+    .modal-content-del p {
+        font-size: .9rem;
+    }
+
+    .buttons {
+        gap: 2px;
+    }
+
+    .modal-del-btn {
+        height: 25px;
+    }
+
+    .modal-cancel-btn {
+        height: 25px;
+    }
+
+
+    /*============Assign Test Modal============*/
+
+    .modal-content {
+        margin: 15% auto;
+        width: 95%;
+        overflow-y: auto;
+        padding: 25px;
+    }
+
+    .modal-content h2 {
+        font-size: 1.5rem;
+    }
+
+    .modal-content .form-group label {
+        font-size: .5rem;
+    }
+
+    .testscontainer .patientInfo {
+        padding: 10px 20px;
+    }
+
+    .testscontainer .patientInfo p .testlabel {
+        font-size: .7rem;
+        width: 30%;
+        margin-left: 10px;
+    }
+
+    .testscontainer .patientInfo p .spanpatientinfo {
+        font-size: .7rem;
+    }
+
+    .testscontainer .test {
+        padding: 3px;
+    }
+
+    .testscontainer .test p {
+        font-size: .6rem;
+    }
+
+    .testscontainer input[type="checkbox"] {
+        transform: scale(1.3);
+        margin-right: 10px;
+        margin-left: 10px;
+    }
+
+    .testscontainer .test-grid {
+        gap: 10px;
+    }
+
+    .buttons {
+        margin-top: 15px;
+    }
+
+    .buttons .savebtn {
+        padding: 7px 15px;
+        font-size: 1rem;
+    }
+
+    .testscontainer .cancelbtn {
+        padding: 7px 15px;
+        font-size: 1rem;
+    }
+
+    /*================Doctors Page================*/
+
+    #content .navbar .setting-icon{
+        margin: 7px -20px 3px 51px;
+    }
+
+
+    #content main .table-data .head h3 {
+        font-size: 1.2rem;
+        margin-top: 0px;
+    }
+
+
+    #content main .table-data .head .right .addnewbtn {
+        height: 10px;
+        font-size: .8rem;
+        padding: 15px 20px;
+    }
+
+    div.dt-container label {
+        font-size: .8rem;
+    }
+
+    div.dt-container select.dt-input {
+        padding: 0px;
+    }
+
+    div.dt-container .dt-search input {
+        padding: 2px;
+    }
+
+    #content main .table-data .order table thead tr th {
+        padding-top: 8px;
+        padding-bottom: 8px;
+        font-size: .9rem;
+    }
+
+    #content main .table-data .order table thead tr th input {
+        transform: scale(1.3);
+        margin-left: 4px;
+    }
+    
+    #content main .table-data .order table tbody tr td {
+        padding-top: 5px;
+        padding-bottom: 5px;
+        font-size: .8rem;
+    }
+    
+    #content main .table-data .order table tr td {
+        padding: 3px;
+    }
+
+    #content main .table-data .order table tr td .table-icons {
+        font-size: 1.2rem;
+        margin-right: 4px;
+    }
+    
+    #content main .table-data .order table tr td label {
+        font-size: .7rem;
+    }
+    
+    #content main .table-data .order table tr td input {
+        transform: scale(1.2);
+        margin-right: 4px;
+    }
+
+
+}
