@@ -206,6 +206,48 @@
 
 
 
+
+        <!-- Add Patient Modal-->
+
+        <div id="addPatientModal" class="modal">
+            <div class="modal-content-addpatient">
+                <span class="addpatientclose">&times;</span>
+                <h2>Add New Patient</h2>
+                <form class="addpatientform" id="addPatientForm">
+                    <div class="form-group">
+                        <label for="patientName">Name:</label>
+                        <input class=" input" type="text" id="patientName" name="patientName" required>
+                        <span class="error" id="nameError"></span>
+                    </div>
+                    <div class="form-group">
+                        <label for="patientAge">Age:</label>
+                        <input class=" input" type="number" id="patientAge" name="patientAge" required>
+                        <span class="error" id="ageError"></span>
+                    </div>
+                    <div class="form-group">
+                        <label for="patientGender">Gender:</label>
+                        <select class="input" id="patientGender" name="patientGender" required>
+                            <option value="" disabled selected>Select Gender</option>
+                            <option value="Male">Male</option>
+                            <option value="Female">Female</option>
+                        </select>
+                        <span class="error" id="genderError"></span>
+                    </div>
+                    <div class="form-group">
+                        <label for="patientDetails">Details:</label>
+                        <textarea class="input" id="patientDetails" name="patientDetails" rows="4" required></textarea>
+                        <span class="error" id="detailsError"></span>
+                    </div>
+                    <div class="button">
+                        <button class="addpatient" type="submit">Add Patient</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+
+
+
     </section>
     <!--======= Content Section Ends =======-->
 
