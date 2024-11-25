@@ -1,1 +1,61 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;500;600;700;800&display=swap');
+
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+a {
+    text-decoration: none;
+}
+
+li {
+    list-style: none;
+}
+
+:root {
+    --poppins: 'Poppins', sans-serif;
+
+    --light: #ffffff;
+    --purple: #6439FF;
+    --background: #e5e0f7;
+    --hover: #f9f9f9;
+    --light-purple: #CFE8FF;
+    --background: #eee;
+    --light-grey: lightgray;
+    --dark-grey: #3b3737;
+    --dark: #03091b;
+    --lilac: #9B59B6;
+    --light-purple: #3498DB;
+    --light-yellow: #FFF2C6;
+    --soft-red: #E74C3C;
+    --light-soft-red: #FFE0D3;
+    --green: #1ABC9C;
+}
+
+html {
+    overflow-x: hidden;
+}
+
+body.dark {
+    --light: #0C0C1E;
+    --background: #03040a;
+    --dark: #FBFBFB;
+    --light-grey: #03040a;
+}
+
+body {
+    background: var(--background);
+    overflow-x: hidden;
+    font-family: poppins, sans-serif;
+    opacity: 1;
+    transition: opacity 0.5s ease;
+    /* Smooth fade-in effect */
+}
+
+.fade-out {
+    opacity: 0;
+}
