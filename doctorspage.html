@@ -128,38 +128,38 @@
 
 
 
-  <!-- Main Starts -->
-  <main>
-    <div class="table-data">
-        <div class="order">
-            <div class="head">
-                <h3>List of Existing Patients</h3>
+        <!-- Main Starts -->
+        <main>
+            <div class="table-data">
+                <div class="order">
+                    <div class="head">
+                        <h3>List of Existing Patients</h3>
 
-                <div class="head-title">
-                    <div class="right">
-                        <button id="openModalBtn" class=" addnewbtn">Add New Patient</button>
-                        </a>
+                        <div class="head-title">
+                            <div class="right">
+                                <button id="openModalBtn" class=" addnewbtn">Add New Patient</button>
+                                </a>
+                            </div>
+                        </div>
                     </div>
-                </div>
-            </div>
 
-            <table id="patientTable" class="display table">
+                    <table id="patientTable" class="display table">
 
-                <thead>
-                    <tr>
-                        <th><input type="checkbox" id="selectAll"></th>
-                        <th>No</th>
-                        <th>Name</th>
-                        <th>Age</th>
-                        <th>Gender</th>
-                        <th>Details</th>
-                        <th>Actions</th>
-                        <th>Tests Assigned</th>
-                        <th>Status</th>
-                    </tr>
-                </thead>
-                <tbody id="patientTableBody">
-                    <!-- <tr>
+                        <thead>
+                            <tr>
+                                <th><input type="checkbox" id="selectAll"></th>
+                                <th>No</th>
+                                <th>Name</th>
+                                <th>Age</th>
+                                <th>Gender</th>
+                                <th>Details</th>
+                                <th>Actions</th>
+                                <th>Tests Assigned</th>
+                                <th>Status</th>
+                            </tr>
+                        </thead>
+                        <tbody id="patientTableBody">
+                            <!-- <tr>
                         <td><input type="checkbox" name="checkbox" class="rowCheckbox"></td>
                         <td id="patientNumber">01</td>
                         <td id="name">John Doe</td>
@@ -195,12 +195,12 @@
                           </label>
                         </td>
                       </tr> -->
-                </tbody>
-            </table>
-        </div>
-    </div>
-</main>
-<!-- Main Ends  -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </main>
+        <!-- Main Ends  -->
 
 
 
@@ -247,9 +247,9 @@
 
 
 
-         <!-- View Modal -->
+        <!-- View Modal -->
 
-         <div id="viewPatientModal" class="modal">
+        <div id="viewPatientModal" class="modal">
             <div class="modal-content-view">
                 <span class="viewclose">&times;</span>
                 <h2>Patient Details</h2>
@@ -265,53 +265,53 @@
 
 
 
- <!-- Update Modal -->
+        <!-- Update Modal -->
 
- <div id="editModal" class="modal">
-    <div class="modal-content-edit">
-        <span class="editclose">&times;</span>
-        <h2>Update Patient Information</h2>
-        <form class="updateform" id="updatePatientForm">
-            <div class="form-group">
-                <label for="editPatientName">Name:</label>
-                <input type="text" id="editPatientName" class=" input" name="editPatientName" required>
-            </div>
-            <div class="form-group">
-                <label for="editPatientAge">Age:</label>
-                <input type="text" id="editPatientAge" class=" input" name="editPatientAge" required>
-            </div>
+        <div id="editModal" class="modal">
+            <div class="modal-content-edit">
+                <span class="editclose">&times;</span>
+                <h2>Update Patient Information</h2>
+                <form class="updateform" id="updatePatientForm">
+                    <div class="form-group">
+                        <label for="editPatientName">Name:</label>
+                        <input type="text" id="editPatientName" class=" input" name="editPatientName" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="editPatientAge">Age:</label>
+                        <input type="text" id="editPatientAge" class=" input" name="editPatientAge" required>
+                    </div>
 
-            <div class="form-group">
-                <label for="editPatientGender">Gender:</label>
-                <select class=" input" id="editPatientGender" name="editPatientGender" required>
-                    <option class="options" value="" disabled selected>Select Gender</option>
-                    <option class="options" value="Male">Male</option>
-                    <option class="options" value="Female">Female</option>
-                    <option class="options" class="options" value="Other">Other</option>
-                </select>
-            </div>
+                    <div class="form-group">
+                        <label for="editPatientGender">Gender:</label>
+                        <select class=" input" id="editPatientGender" name="editPatientGender" required>
+                            <option class="options" value="" disabled selected>Select Gender</option>
+                            <option class="options" value="Male">Male</option>
+                            <option class="options" value="Female">Female</option>
+                            <option class="options" class="options" value="Other">Other</option>
+                        </select>
+                    </div>
 
-            <div class="form-group">
-                <label for="editPatientDetails">Details:</label>
-                <textarea class="input" id="editPatientDetails" name="editPatientDetails" rows="4"
-                    required></textarea>
-            </div>
+                    <div class="form-group">
+                        <label for="editPatientDetails">Details:</label>
+                        <textarea class="input" id="editPatientDetails" name="editPatientDetails" rows="4"
+                            required></textarea>
+                    </div>
 
-            <div class="form-group">
-                <label for="patientStatus">Status:</label>
-                <select class="input" id="patientStatus" name="patientStatus" required>
-                    <option class="options" value="" disabled selected>Select Status</option>
-                    <option class="options" value="Active">Active</option>
-                    <option class="options" value="Inactive">Inactive</option>
-                </select>
-            </div>
+                    <div class="form-group">
+                        <label for="patientStatus">Status:</label>
+                        <select class="input" id="patientStatus" name="patientStatus" required>
+                            <option class="options" value="" disabled selected>Select Status</option>
+                            <option class="options" value="Active">Active</option>
+                            <option class="options" value="Inactive">Inactive</option>
+                        </select>
+                    </div>
 
-            <div class="form-group">
-                <button id="updatePatient" class="modal-btn" type="submit">Update</button>
+                    <div class="form-group">
+                        <button id="updatePatient" class="modal-btn" type="submit">Update</button>
+                    </div>
+                </form>
             </div>
-        </form>
-    </div>
-</div>
+        </div>
 
 
 
@@ -327,6 +327,92 @@
                     <button id="cancelDelete" class="modal-cancel-btn">Cancel</button>
                 </div>
             </div>
+        </div>
+
+
+
+
+
+        <!-- Assign Test Modal  -->
+        <div id="testModal" class="testscontainer modal">
+            <div class="modal-content">
+                <span id="closeModal" class="assigntestclose">&times;</span>
+                <div class="patientInfo" id="patientInfo">
+                    <h2>Patient Information</h2>
+                    <p><span class="testlabel">Name :</span><span class="spanpatientinfo" id="testpatientName"></span>
+                    </p>
+                    <p><span class="testlabel">Age :</span><span class="spanpatientinfo" id="testpatientAge"></span></p>
+                    <p><span class="testlabel">Gender :</span><span class="spanpatientinfo"
+                            id="testpatientGender"></span></p>
+                    <p><span class="testlabel">Details :</span> <span class="spanpatientinfo"
+                            id="testpatientDetails"></span></p>
+                </div>
+                <h2>Select Tests</h2>
+                <!-- Test checkboxes grid -->
+                <form id="assignTests">
+                    <div class="test-grid">
+                        <div class="test">
+                            <label class="testslabel"><input type="checkbox" name="tests" class="test-checkbox"
+                                    value="Liver Function Test">
+                                <p>Liver Function Test</p>
+                            </label>
+                        </div>
+                        <div class="test">
+                            <label class="testslabel"><input type="checkbox" name="tests" class="test-checkbox"
+                                    value="Kidney Function Test">
+                                <p>Kidney Function Test</p>
+                            </label>
+                        </div>
+                        <div class="test">
+                            <label class="testslabel"><input type="checkbox" name="tests" class="test-checkbox"
+                                    value="Blood Test">
+                                <p>Blood Test</p>
+                            </label>
+                        </div>
+                        <div class="test">
+                            <label class="testslabel"><input type="checkbox" name="tests" class="test-checkbox"
+                                    value="Thyroid Test">
+                                <p>Thyroid Test</p>
+                            </label>
+                        </div>
+                        <div class="test">
+                            <label class="testslabel"><input type="checkbox" name="tests" class="test-checkbox"
+                                    value="Glucose Test">
+                                <p>Glucose Test</p>
+                            </label>
+                        </div>
+                        <div class="test">
+                            <label class="testslabel"><input type="checkbox" name="tests" class="test-checkbox"
+                                    value="Electrolyte Test">
+                                <p>Electrolyte Test</p>
+                            </label>
+                        </div>
+                        <div class="test">
+                            <label class="testslabel"><input type="checkbox" name="tests" class="test-checkbox"
+                                    value="Renal Function Test">
+                                <p>Renal Function Test</p>
+                            </label>
+                        </div>
+                        <div class="test">
+                            <label class="testslabel"><input type="checkbox" name="tests" class="test-checkbox"
+                                    value="ESR Test">
+                                <p>ESR Test</p>
+                            </label>
+                        </div>
+                        <div class="test">
+                            <label class="testslabel"><input type="checkbox" name="tests" class="test-checkbox"
+                                    value="Blood Urea Nitrogen Test">
+                                <p>Blood Urea Nitrogen Test</p>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="buttons">
+                        <button type="submit" id="assignTests" class="savebtn">Save </button>
+                        <button type="button" id="cancelButton" class="cancelbtn">Cancel</button>
+                    </div>
+            </div>
+            </form>
+        </div>
         </div>
 
 
