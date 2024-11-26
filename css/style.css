@@ -487,3 +487,192 @@ body {
 }
 
 /*==================================Delete Modal CSS Ends=================================*/
+
+
+
+/*==================================Assign Tests Modal CSS Starts=================================*/
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 2100;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.4);
+    /* Overlay effect */
+}
+
+.modal-content {
+    background-color: var(--light);
+    margin: 2% auto;
+    padding: 60px;
+    border: 1px solid #888;
+    border-radius: 10px;
+    width: 75%;
+    height: auto;
+    position: relative;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    -webkit-animation-name: animatetop;
+    -webkit-animation-duration: 0.4s;
+    animation-name: animatetop;
+    animation-duration: 0.4s
+}
+
+.assigntestclose {
+    margin-top: 5px;
+    margin-right: 10px;
+    float: right;
+    font-size: 32px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.assigntestclose:hover,
+.assigntestclose:focus {
+    color: var(--soft-red);
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.testscontainer {
+    /* background-color: var(--light); */
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.testscontainer h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 3rem;
+    font-weight: 700;
+    color: var(--purple);
+}
+
+.testscontainer .patientInfo {
+    padding: 20px 60px;
+    background-color: var(--background);
+    border-radius: 10px;
+    margin-bottom: 15px;
+}
+
+.testscontainer .patientInfo p {
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.testscontainer .patientInfo p .testlabel {
+    color: var(--dark);
+    font-size: 1.1rem;
+    font-weight: 700;
+    margin-left: 80px;
+    margin-right: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    align-self: flex-start;
+    width: 15%;
+}
+
+.testscontainer .patientInfo p span {
+    width: 70%;
+}
+
+.testscontainer .test-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+
+.testscontainer .test {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--background);
+    padding: 16px;
+    border-radius: 10px;
+    gap: 10px;
+    /* width: 100%; */
+}
+
+.testscontainer .test .testslabel {
+    margin-top: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    width: 100%;
+}
+
+.testscontainer .test p {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    width: 80%;
+    font-size: 1.2rem;
+}
+
+.testscontainer input[type="checkbox"] {
+    transform: scale(2);
+    margin-right: 15px;
+    margin-left: 15px;
+    width: 10%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    align-self: center;
+}
+
+.buttons {
+    margin-top: 25px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    gap: 20px;
+}
+
+.buttons .savebtn {
+    padding: 10px 40px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    font-size: 1.4rem;
+    font-weight: 600;
+    letter-spacing: .09rem;
+    cursor: pointer;
+    border-radius: 25px;
+    border: 2px solid var(--purple);
+    background-color: var(--purple);
+    color: var(--light);
+}
+
+.buttons .savebtn:hover {
+    background-color: var(--light);
+    color: var(--purple);
+}
+
+.testscontainer .cancelbtn {
+    padding: 10px 40px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    font-size: 1.4rem;
+    font-weight: 600;
+    letter-spacing: .09rem;
+    cursor: pointer;
+    border-radius: 25px;
+    border: 2px solid var(--dark-grey);
+    background-color: var(--dark-grey);
+    color: var(--light);
+}
+
+.testscontainer .cancelbtn:hover {
+    background-color: var(--light);
+    color: var(--dark-grey);
+}
+
+/*==================================Assign Tests Modal CSS Ends================================*/
+
