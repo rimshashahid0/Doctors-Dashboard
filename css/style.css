@@ -399,3 +399,91 @@ body {
 
 /*======================Update Modal CSS Ends=====================*/
 
+
+/*======================Delete Modal CSS Starts=====================*/
+
+.modal-del {
+    display: none;
+    position: fixed;
+    z-index: 2100;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal-content-del {
+    background-color: var(--light);
+    margin: 20% auto;
+    padding: 40px;
+    border: 1px solid #888;
+    border-radius: 10px;
+    width: 50%;
+    height: auto;
+    position: relative;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    -webkit-animation-name: animatetop;
+    -webkit-animation-duration: 0.4s;
+    animation-name: animatetop;
+    animation-duration: 0.4s
+}
+
+.modal-content-del p {
+    margin-top: 10px;
+    font-size: 1.2rem;
+    font-weight: 500;
+}
+
+.deletemodalbuttons {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 10px;
+    gap: 10px;
+}
+
+.modal-del-btn {
+    height: 40px;
+    padding: 10px 20px;
+    border: 2px solid transparent;
+    border-radius: 35px;
+    background: var(--purple);
+    color: var(--light);
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    grid-gap: 10px;
+    font-weight: 500;
+    font-size: 1rem;
+    box-shadow: 0 8px 12px rgba(149, 97, 199, 0.15), 0 3px 6px rgba(149, 97, 199, 0.15);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.modal-del-btn:hover {
+    transform: scale(0.95);
+    box-shadow: 0 8px 12px rgba(149, 97, 199, 0.15), 0 3px 6px rgba(149, 97, 199, 0.15);
+}
+
+.modal-cancel-btn {
+    height: 40px;
+    padding: 10px 20px;
+    border: 2px solid transparent;
+    border-radius: 35px;
+    background: var(--dark-grey);
+    color: var(--light);
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    grid-gap: 10px;
+    font-weight: 500;
+    font-size: 1rem;
+    box-shadow: 0 8px 12px rgba(149, 97, 199, 0.15), 0 3px 6px rgba(149, 97, 199, 0.15);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.modal-cancel-btn:hover {
+    transform: scale(0.95);
+    box-shadow: 0 8px 12px rgba(149, 97, 199, 0.15), 0 3px 6px rgba(149, 97, 199, 0.15);
+}
+
+/*==================================Delete Modal CSS Ends=================================*/
