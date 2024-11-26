@@ -1046,3 +1046,13 @@ body {
 /*==================Content Section - Navbar CSS Ends=================*/
 
 
+/*==================Content Section - Main CSS Starts=================*/
+
+#content main {
+    width: 100%;
+    padding: 15px 25px;
+    font-family: var(--poppins);
+    max-height: calc(100vh - 56px);
+    overflow-y: auto;
+}
+
