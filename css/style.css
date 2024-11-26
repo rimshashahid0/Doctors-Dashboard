@@ -809,3 +809,44 @@ body {
     font-weight: 600;
 }
 
+
+/*=================Sidebar Hide CSS Starts=================*/
+
+#sidebar.hide {
+    width: 70px;
+    transform: translateX(-100% - 250px);
+}
+
+#sidebar.hide .side-menu li a {
+    width: calc(68px - (4px * 2));
+    transition: width .3s ease;
+}
+
+#sidebar.hide .side-menu li a:hover {
+    margin-left: 0;
+}
+
+.sidebar-no-transition {
+    transition: none !important;
+}
+
+#sidebar.preload {
+    visibility: hidden;
+}
+
+#content {
+    position: relative;
+    width: calc(100% - 250px);
+    left: 250px;
+    transition: margin-left .3s ease;
+}
+
+#sidebar.hide~#content {
+    width: calc(100% - 60px);
+    left: 60px;
+}
+
+
+/*=================Sidebar Hide CSS Ends=================*/
+/*==============================================Side Menu CSS Ends===================================================*/
+
