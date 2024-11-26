@@ -850,3 +850,199 @@ body {
 /*=================Sidebar Hide CSS Ends=================*/
 /*==============================================Side Menu CSS Ends===================================================*/
 
+
+
+/*============================================Content Section Starts=================================================*/
+/*==================Content Section - Navbar CSS Starts=================*/
+
+#content .navbar {
+    height: 56px;
+    background: var(--light);
+    padding: 0 24px;
+    display: flex;
+    align-items: center;
+    grid-gap: 24px;
+    font-family: var(--poppins);
+    position: sticky;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+}
+
+#content .navbar::before {
+    content: '';
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    bottom: -40px;
+    left: 0;
+    border-radius: 20%;
+    box-shadow: -20px -20px 0 var(--light);
+}
+
+#content .navbar .menu-icon {
+    cursor: pointer;
+    color: var(--dark);
+    font-weight: 600;
+    font-size: 2rem;
+    margin: 9px 20px 5px 17px;
+}
+
+#content .navbar .menu-icon:hover {
+    color: var(--purple);
+}
+
+#content .navbar .nav-link {
+    font-size: 1.1rem;
+    font-weight: 500;
+    transition: .3s ease;
+    margin-top: 4px;
+    margin-left: -40px;
+    margin-right: 20px;
+    color: var(--dark);
+}
+
+#content .navbar form {
+    max-width: 400px;
+    width: 100%;
+    margin-right: auto;
+}
+
+#content .navbar form .form-input {
+    display: flex;
+    align-items: center;
+    height: 36px;
+}
+
+#content .navbar form .form-input input {
+    flex-grow: 1;
+    padding: 0 16px;
+    height: 100%;
+    border: none;
+    background: var(--background);
+    border-radius: 36px 0 0 36px;
+    outline: none;
+    width: 100%;
+    color: var(--light);
+}
+
+#content .navbar form .form-input .search-btn-icon {
+    width: 36px;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: var(--purple);
+    color: var(--light);
+    font-size: 1rem;
+    border: none;
+    outline: none;
+    border-radius: 0 36px 36px 0;
+    cursor: pointer;
+    margin-right: 20px;
+}
+
+#content .navbar .profile-img img {
+    width: 36px;
+    height: 36px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin-top: 10px;
+}
+
+#content .navbar .switch-mode {
+    display: block;
+    min-width: 50px;
+    height: 25px;
+    border-radius: 25px;
+    background: var(--background);
+    cursor: pointer;
+    position: relative;
+    margin-top: 5px;
+}
+
+#content .navbar .switch-mode::before {
+    content: '';
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    bottom: 2px;
+    width: calc(25px - 4px);
+    background: var(--purple);
+    border-radius: 50%;
+    transition: all .3s ease;
+}
+
+#content .navbar #switch-mode:checked+.switch-mode::before {
+    left: calc(100% - (25px - 4px) - 2px);
+}
+
+#content .navbar .setting-icon {
+    cursor: pointer;
+    color: var(--dark);
+    font-weight: 600;
+    font-size: 2rem;
+    margin: 9px 20px 5px 40px;
+}
+
+#content .navbar .setting-icon:hover {
+    color: var(--purple);
+}
+
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    background-color: var(--light);
+    list-style: none;
+    padding: 15px 20px;
+    margin: 10px;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.1);
+    width: 11rem;
+    right: 0;
+    left: auto;
+    transition: all 600ms linear;
+    border-radius: 10px;
+    border: 1px solid;
+}
+
+.dropdown-menu li {
+    padding: 5px 5px;
+    text-decoration: none;
+    color: var(--dark);
+    font-size: 1.2rem;
+    display: flex;
+    align-items: center;
+    font-weight: 500;
+}
+
+.dropdown-menu li a {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.dropdown-menu li a .dropdown-icons {
+    cursor: pointer;
+    color: var(--dark);
+    font-weight: 600;
+    font-size: 1.6rem;
+    margin-right: 20px;
+}
+
+.dropdown-menu li a .text {
+    color: var(--dark);
+    font-size: 1.1rem;
+    font-weight: 600;
+}
+
+.dropdown-menu li a .logout {
+    color: var(--soft-red);
+}
+
+.dropdown-menu.show {
+    display: block;
+}
+
+/*==================Content Section - Navbar CSS Ends=================*/
+
+
