@@ -1328,3 +1328,143 @@ table.dataTable td.dt-type-date {
 /*============Content Section - Main of index.html CSS Ends=========*/
 /*============================================Content Section Ends=================================================*/
 
+
+
+/* ======================================================================================================================== */
+/* ======================================================================================================================== */
+/*===============================================Media Queries for Responsiveness==========================================*/
+/* ======================================================================================================================== */
+/* ======================================================================================================================== */
+
+
+@media only screen and (max-width: 1200px) {
+
+
+    /*================Add Patient Modal================*/
+
+    .modal-content-addpatient {
+        margin: 12% auto;
+        width: 60%;
+    }
+
+    /*================View Modal================*/
+    .modal-content-view {
+        margin: 18% auto;
+        width: 60%;
+    }
+
+    .modal-content-view h2 {
+        font-size: 1.7rem;
+    }
+
+    .modal-content-view p .viewlabel {
+        font-size: 1rem;
+    }
+
+    .modal-content-view p span {
+        font-size: .9rem;
+        margin-left: 10px;
+    }
+
+    /*================Edit Modal================*/
+
+    .modal-content-edit {
+        margin: 10% auto;
+        width: 65%;
+    }
+
+    .modal-content-edit h2 {
+        font-size: 2.2rem;
+    }
+
+        /*================Delete Modal================*/
+
+        .modal-del .modal-content-del {
+            width: 65%;
+            margin: 30% auto;
+        }
+    
+        .buttons {
+            gap: 5px;
+        }
+    
+        .modal-del-btn {
+            height: 35px;
+        }
+    
+        .modal-cancel-btn {
+            height: 35px;
+        }
+
+    /*============Assign Test Modal============*/
+
+    .modal-content {
+        margin: 10% auto;
+        width: 80%;
+        overflow-y: auto;
+    }
+
+    .modal-content h2 {
+        font-size: 1.5rem;
+    }
+
+    .modal-content .form-group label {
+        font-size: .9rem;
+    }
+
+    .testscontainer .patientInfo {
+        padding: 20px 30px;
+    }
+
+    .testscontainer .patientInfo p .testlabel {
+        font-size: 1.1rem;
+        width: 25%;
+        margin-left: 10px;
+    }
+
+    .testscontainer .test p {
+        font-size: 1.1rem;
+    }
+
+    /*================Doctors Page================*/
+
+    #content main .table-data .head h3 {
+        font-size: 2.3rem;
+    }
+
+    #content main .table-data .head .right .addnewbtn {
+        font-size: 1.2rem;
+    }
+
+
+    #content main .table-data .order table thead tr th {
+        padding-top: 10px;
+        padding-bottom: 10px;
+        font-size: 1.1rem;
+    }
+    
+    #content main .table-data .order table thead tr th input {
+        margin-left: 8px;
+    }
+    
+    #content main .table-data .order table tbody tr td {
+        padding-top: 10px;
+        padding-bottom: 10px;
+        font-size: 1.1rem;
+    }
+    
+    #content main .table-data .order table tr td {
+        padding: 8px;
+    }
+
+    #content main .table-data .order table tr td .table-icons {
+        font-size: 1.5rem;
+        margin-right: 5px;
+    }
+    
+    #content main .table-data .order table tr td input {
+        margin-right: 5px;
+    }
+
+
+}
