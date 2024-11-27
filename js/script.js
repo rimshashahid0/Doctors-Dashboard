@@ -252,4 +252,18 @@ function loadPatients() {
     }
     
 
+ 
+// ==============================================================================================================================//
+// ======================================================On Page Loaf Effect=====================================================// 
+// ==============================================================================================================================//
 
+
+   // Apply fade-in effect on page load
+   window.addEventListener('load', () => {
+    document.body.style.opacity = '1';
+});
+
+// Apply fade-out effect before page reload or navigation
+window.addEventListener('beforeunload', (event) => {
+    document.body.classList.add('fade-out');
+});
