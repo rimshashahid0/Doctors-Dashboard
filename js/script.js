@@ -267,3 +267,25 @@ function loadPatients() {
 window.addEventListener('beforeunload', (event) => {
     document.body.classList.add('fade-out');
 });
+
+
+ 
+// ==============================================================================================================================//
+// ======================================================Save Table Page Index===================================================// 
+// ==============================================================================================================================//
+
+
+
+// Save the current page index before the page loads
+window.onbeforeunload = function() {
+    localStorage.setItem('dataTablePage', patientTable.page());
+};
+
+// Restore the page index after the page loads
+$(document).ready(function() {
+    const savedPage = localStorage.getItem('dataTablePage');
+    if (savedPage !== null) {
+        patientTable.page(parseInt(savedPage)).draw(false); // Restore the saved page index
+        localStorage.removeItem('dataTablePage'); // Clear the stored page after use
+    }
+});
