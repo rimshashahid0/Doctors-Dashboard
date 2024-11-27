@@ -1614,3 +1614,202 @@ table.dataTable td.dt-type-date {
 
 }
 
+
+@media only screen and (max-width: 768px) {
+
+
+    /*===============Add Patient Modal================*/
+
+    .modal-content-addpatient {
+        margin: 20% auto;
+        width: 80%;
+    }
+
+    /*================View Modal================*/
+    .modal-content-view {
+        margin: 25% auto;
+        width: 75%;
+        padding: 30px;
+    }
+
+    .modal-content-view h2 {
+        font-size: 1.7rem;
+    }
+
+    .modal-content-view p .viewlabel {
+        font-size: .8rem;
+    }
+
+    .modal-content-view p span {
+        font-size: .75rem;
+        margin-left: 10px;
+    }
+
+    /*================Edit Modal================*/
+
+    .modal-content-edit {
+        margin: 18% auto;
+        padding: 50px;
+        width: 85%;
+    }
+
+    .modal-content-edit h2 {
+        font-size: 1.7rem;
+        padding-bottom: 10px;
+    }
+
+    .editclose {
+        margin-top: 0px;
+        font-size: 32px;
+    }
+
+    
+    /*================Delete Modal================*/
+
+    .modal-del .modal-content-del {
+        width: 85%;
+        margin: 45% auto;
+        padding: 30px;
+    }
+
+    .buttons {
+        gap: 2px;
+    }
+
+    .modal-del-btn {
+        height: 35px;
+    }
+
+    .modal-cancel-btn {
+        height: 35px;
+    }
+
+    /*============Assign Test Modal============*/
+
+    .modal-content {
+        margin: 10% auto;
+        width: 90%;
+        overflow-y: auto;
+        padding: 40px;
+    }
+
+    .modal-content h2 {
+        font-size: 1.5rem;
+    }
+
+    .modal-content .form-group label {
+        font-size: .7rem;
+    }
+
+    .testscontainer .patientInfo {
+        padding: 10px 20px;
+    }
+
+    .testscontainer .patientInfo p .testlabel {
+        font-size: .9rem;
+        width: 25%;
+        margin-left: 10px;
+    }
+
+    .testscontainer .patientInfo p .spanpatientinfo {
+        font-size: .9rem;
+    }
+
+    .testscontainer .test {
+        padding: 8px;
+    }
+
+    .testscontainer .test p {
+        font-size: .7rem;
+    }
+
+    .testscontainer input[type="checkbox"] {
+        transform: scale(1.7);
+        margin-right: 10px;
+        margin-left: 10px;
+    }
+
+    .testscontainer .test-grid {
+        gap: 20px;
+    }
+
+    .buttons {
+        margin-top: 20px;
+    }
+
+    .buttons .savebtn {
+        padding: 10px 30px;
+        font-size: 1.2rem;
+    }
+
+    .testscontainer .cancelbtn {
+        padding: 10px 30px;
+        font-size: 1.2rem;
+    }
+
+
+    /*================Doctors Page================*/
+
+    #content main .table-data .head h3 {
+        font-size: 2rem;
+    }
+
+    #content main .table-data .head .right .addnewbtn {
+        font-size: 1.1rem;
+    }
+
+    div.dt-container div.dt-layout-row:not(.dt-layout-table) {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    div.dt-container label {
+        font-size: .9rem;
+    }
+
+    div.dt-container select.dt-input {
+        padding: 1px;
+    }
+
+    div.dt-container .dt-search input {
+        padding: 3px;
+    }
+
+    #content main .table-data .order table thead tr th {
+        padding-top: 7px;
+        padding-bottom: 7px;
+        font-size: 1rem;
+    }
+    
+    #content main .table-data .order table thead tr th input {
+        transform: scale(1.5);
+        margin-left: 5px;
+    }
+    
+    #content main .table-data .order table tbody tr td {
+        padding-top: 7px;
+        padding-bottom: 7px;
+        font-size: 1rem;
+    }
+    
+    #content main .table-data .order table tr td {
+        padding: 5px;
+    }
+
+    #content main .table-data .order table tr td .table-icons {
+        font-size: 1.5rem;
+        margin-right: 10px;
+    }
+    
+    #content main .table-data .order table tr td label {
+        font-size: .85rem;
+    }
+    
+    #content main .table-data .order table tr td input {
+        transform: scale(1.3);
+        margin-right: 4px;
+    }
+
+
+}
