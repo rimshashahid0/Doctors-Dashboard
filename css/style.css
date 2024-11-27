@@ -1813,3 +1813,270 @@ table.dataTable td.dt-type-date {
 
 
 }
+
+
+
+@media only screen and (max-width: 600px) {
+
+
+    /*===============Add Patient Modal================*/
+
+    .modal-content-addpatient {
+        margin: 24% auto;
+        padding: 30px;
+        width: 80%;
+    }
+
+    .modal-content-addpatient h2 {
+        font-size: 1.9rem;
+    }
+
+    .modal-content-addpatient .form-group label {
+        padding-right: 20px;
+    }
+
+    .addpatientclose {
+        margin-top: 0px;
+    }
+
+    .addpatient {
+        height: 36px;
+        padding: 10px 25px;
+    }
+
+
+    /*================View Modal================*/
+    .modal-content-view {
+        margin: 35% auto;
+        width: 85%;
+        padding: 20px;
+    }
+
+    .modal-content-view h2 {
+        font-size: 1.7rem;
+    }
+
+    .modal-content-view p .viewlabel {
+        font-size: .75rem;
+    }
+
+    .modal-content-view p span {
+        font-size: .65rem;
+        margin-left: 10px;
+    }
+
+    .viewclose {
+        font-size: 1.5rem;
+    }
+
+    /*================Edit Modal================*/
+
+    .modal-content-edit {
+        margin: 20% auto;
+        padding: 50px 70px;
+        width: 90%;
+    }
+
+    .modal-content-edit h2 {
+        font-size: 1.6rem;
+    }
+
+    .modal-content-edit .form-group .input {
+        width: 80%;
+    }
+
+    /*================Delete Modal================*/
+
+    .modal-del .modal-content-del {
+        width: 90%;
+        margin: 50% auto;
+        padding: 20px;
+    }
+
+    .modal-content-del p {
+        font-size: 1rem;
+    }
+
+    .buttons {
+        gap: 2px;
+    }
+
+    .modal-del-btn {
+        height: 30px;
+    }
+
+    .modal-cancel-btn {
+        height: 30px;
+    }
+
+    /*============Assign Test Modal============*/
+
+    .modal-content {
+        margin: 10% auto;
+        width: 90%;
+        /* max-height: 450px; */
+        overflow-y: auto;
+        padding: 30px;
+    }
+
+    .modal-content h2 {
+        font-size: 1.5rem;
+    }
+
+    .modal-content .form-group label {
+        font-size: .6rem;
+    }
+
+    .testscontainer .patientInfo {
+        padding: 10px 20px;
+    }
+
+    .testscontainer .patientInfo p .testlabel {
+        font-size: .8rem;
+        width: 25%;
+        margin-left: 10px;
+    }
+
+    .testscontainer .patientInfo p .spanpatientinfo {
+        font-size: .8rem;
+    }
+
+    .testscontainer .test {
+        padding: 6px;
+    }
+
+    .testscontainer .test p {
+        font-size: .7rem;
+    }
+
+
+    .testscontainer input[type="checkbox"] {
+        transform: scale(1.5);
+        margin-right: 10px;
+        margin-left: 10px;
+    }
+
+
+    .testscontainer .test-grid {
+        gap: 15px;
+    }
+
+    .buttons {
+        margin-top: 20px;
+    }
+
+    .buttons .savebtn {
+        padding: 10px 20px;
+        font-size: 1.1rem;
+    }
+
+    .testscontainer .cancelbtn {
+        padding: 10px 20px;
+        font-size: 1.1rem;
+    }
+
+    /*================Doctors Page================*/
+
+    #sidebar .side-menu li a .side-menu-icons{
+        font-size: 1.8rem;
+    }
+
+    #content .navbar .menu-icon{
+        font-size: 1.9rem;
+        margin: 7px 60px 3px -2px;
+    }
+
+    #content .navbar .nav-link{
+        font-size: 0.9rem;
+        margin-left: -80px;
+    }
+
+    #content .navbar .setting-icon{
+        font-size: 1.8rem;
+        margin: 7px -20px 3px 15px;
+    }
+
+    #content .navbar .profile-img img{
+        display: none;
+    }
+
+    #content .navbar .switch-mode{
+        display: none;
+    }
+
+    #content .navbar form .form-input {
+        display: none;
+    }
+
+    #content main .head {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+
+    #content main .table-data .head h3 {
+        font-size: 1.8rem;
+        margin-bottom: 0px;
+        align-items: center;
+    }
+
+    #content main .table-data .head .right .addnewbtn {
+        height: 16px;
+        font-size: 1rem;
+        padding: 20px 30px;
+        margin-top: 0px;
+        margin-bottom: 10px;
+    }
+
+    #content main .table-data {
+        display: block;
+        overflow: auto;
+        white-space: nowrap;
+    }
+
+    div.dt-container div.dt-layout-row:not(.dt-layout-table) {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+
+    #content main .table-data .order table thead tr th {
+        padding-top: 10px;
+        padding-bottom: 10px;
+        font-size: 1rem;
+    }
+    
+    #content main .table-data .order table thead tr th input {
+        transform: scale(1.4);
+        margin-left: 4px;
+    }
+    
+    #content main .table-data .order table tbody tr td {
+        padding-top: 6px;
+        padding-bottom: 6px;
+        font-size: .9rem;
+    }
+    
+    #content main .table-data .order table tr td {
+        padding: 4px;
+    }
+
+    #content main .table-data .order table tr td .table-icons {
+        font-size: 1.4rem;
+        margin-right: 4px;
+    }
+    
+    #content main .table-data .order table tr td label {
+        font-size: .8rem;
+    }
+    
+    #content main .table-data .order table tr td input {
+        transform: scale(1.3);
+        margin-right: 4px;
+    }
+
+
+}
+
